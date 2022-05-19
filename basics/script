@@ -1,4 +1,5 @@
 #!/bin/bash
+#script git
 git add .
 read VAR
 git commit -m "$VAR"
