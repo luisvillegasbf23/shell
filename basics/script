@@ -1,5 +1,5 @@
 #!/bin/bash
 git add .
-$VAR
-git commit -m "VAR"
+VAR="hola"
+git commit -m "$VAR"
 git push
