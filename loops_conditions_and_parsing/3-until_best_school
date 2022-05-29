@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # until loops
 
-i=0
+i=1
 
 until [ $i -gt 10 ]
 do
