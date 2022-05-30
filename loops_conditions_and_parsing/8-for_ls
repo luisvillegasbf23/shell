@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# For loops
+
+
+for f in $(ls | cut -d '-' -f 2)
+do
+	echo "$f"
+done
