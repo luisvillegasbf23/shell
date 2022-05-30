@@ -2,7 +2,7 @@
 # For loops
 
 
-for f in $(ls | cut -d '-' -f 2)
+for f in *
 do
-	echo "$f"
+	echo "$f" | cut -d '-' -f 2
 done
