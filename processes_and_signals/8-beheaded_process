@@ -1,0 +1,3 @@
+#!/urs/bin/env bas
+#Write a Bash script that kills the process 7-highlander.
+pgrep -f -9 "7-highlander"
