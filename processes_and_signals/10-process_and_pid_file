@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #Process and PID file
-X=trap 'rm /var/run/myscript.pid;exit' 
-trap "echo I hate the kill command;$X" SIGTERM
-trap "echo Y U no love me?;$;$XX" SIGINT
+trap 'rm /var/run/myscript.pid;exit' SIGQUIT SIGTERM
+trap "echo I hate the kill command" SIGTERM
+trap "echo Y U no love me?" SIGINT
 while true
   do
     echo "To infinity and beyond"
