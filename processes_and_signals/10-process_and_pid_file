@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #Process and PID file
+trap 'rm /var/run/myscript.pid' SIGQUIT || SIGTERM
 trap 'echo "I hate the kill command"' 15
 trap 'echo "Y U no love me?"' 2
 while true
