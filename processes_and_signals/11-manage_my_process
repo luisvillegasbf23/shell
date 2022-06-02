@@ -8,7 +8,7 @@ start() {
 
 stop() {
   sudo pkill -f -9 "$(cat $RUT)"
-  sudo rm "$RUT"
+  rm $RUT
   }
 
 case $1 in
