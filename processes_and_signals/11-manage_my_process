@@ -24,7 +24,6 @@ case $1 in
     stop
     start
     echo 'manage_my_process restarted'
-    ;;
 esac
   
 
