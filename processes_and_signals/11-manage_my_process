@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Manage my process
-RUT=/var/run/my_process.pid
+
 start() {
   ./manage_my_process &
-  echo $! >> $RUT
+  echo $! >> /var/run/my_process.pid
 }
 
 stop() {
-  pkill -f -9 "manage_my_process"
+  kill -9 "$( cat /var/run/my_process.pid )"
   rm -f /var/run/my_process.pid
   }
 
