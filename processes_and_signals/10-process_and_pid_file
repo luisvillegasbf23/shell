@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 #Process and PID file
-trap "echo 'Ihate the kill command'; rm /var/run/myscript.pid; exit" 15
-trap "rm /var/run/myscript.pid; exit" 3
-trap "echo 'Y U no love me?!'" 2
+echo $$ >> /var/run/myscript.pid
+
+trap "echo 'I hate the kill command'; rm /var/run/myscript.pid; exit" -15
+trap "rm /var/run/myscript.pid; exit" -3
+trap "echo 'Y U no love me?!'" -2
 while true
   do
     echo "To infinity and beyond"
