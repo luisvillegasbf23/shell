@@ -28,7 +28,7 @@ case $1 in
   restart)
     restart
     echo 'manage_my_process restarted'
-    ;;i
+    ;;
 esac
   
 
