@@ -8,8 +8,8 @@ start() {
 
 stop() {
   kill -9 "$( cat /var/run/my_process.pid )"
-  sudo rm -f /var/run/my_process.pid
-  }
+  sudo rm /var/run/my_process.pid
+}
 
 case "$1" in
   start)
