@@ -4,26 +4,27 @@
 start() {
   ./manage_my_process &
   echo $! >> /var/run/my_process.pid
-  }
+}
 
 stop() {
-  sudo pkill -f -9 "manage_my_process"
+  pkill -f -9 "$(cat /var/run/my_process.pid)"
   sudo rm /var/run/my_process.pid
   }
 
 case $1 in
   start)
     start
-    echo "manage_my_process started"
+    echo 'manage_my_process started'
     ;;
   stop)
     stop
-    echo "manage_my_process stopped"
+    echo 'manage_my_process stopped'
     ;;
   restart)
     stop
     start
     echo 'manage_my_process restarted'
+    ;;
 esac
   
 
