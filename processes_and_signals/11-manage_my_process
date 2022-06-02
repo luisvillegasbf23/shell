@@ -1,32 +1,28 @@
 #!/usr/bin/env bash
 # Manage my process
 
-function start() {
+start() {
   ./manage_my_process &
   echo $! >> /var/run/my_process.pid
-  echo 'manage_my_process started'
   }
 
-function stop() {
+stop() {
   sudo pkill -f -9 "manage_my_process"
   sudo rm /var/run/my_process.pid
-  echo 'manage_my_process stopped'
-  }
-
-function restart() {
-  stop
-  start
   }
 
 case $1 in
   start)
     start
+    echo "manage_my_process started"
     ;;
   stop)
     stop
+    echo "manage_my_process stopped"
     ;;
   restart)
-    restart
+    stop
+    start
     echo 'manage_my_process restarted'
     ;;
 esac
