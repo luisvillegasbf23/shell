@@ -7,8 +7,8 @@ start() {
 }
 
 stop() {
-  sudo pkill -f -9 "$(cat $RUT)"
-  sudo rm $RUT
+  pkill -f -9 "manage_my_process"
+  rm -f /var/run/my_process.pid
   }
 
 case $1 in
