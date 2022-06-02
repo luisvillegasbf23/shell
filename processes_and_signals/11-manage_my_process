@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # Manage my process
-
+RUT=/var/run/my_process.pid
 start() {
   ./manage_my_process &
-  echo $! >> /var/run/my_process.pid
+  echo $! >> $RUT
 }
 
 stop() {
-  pkill -f -9 "$(cat /var/run/my_process.pid)"
-  sudo rm /var/run/my_process.pid
+  sudo pkill -f -9 "$(cat $RUT)"
+  sudo rm $RUT
   }
 
 case $1 in
