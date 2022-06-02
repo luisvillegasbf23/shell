@@ -3,20 +3,32 @@
 
 function start() {
   ./manage_my_process &
-  echo $! >> /var/run/mi_proceso.pid
-  echo 'manage_my_process started'
+  echo $! >> /var/run/my_process.pid
   }
 
 function stop() {
   sudo pkill -f -9 "manage_my_process"
   sudo rm /var/run/my_process.pid
-  echo 'manage_my_process stopped'
   }
 
 function restart() {
   stop
   start
-  echo 'manage_my_process restarted'
   }
 
+case $1 in
+  start)
+    start
+    echo 'manage_my_process started'
+    ;;
+  stop)
+    stop
+    echo 'manage_my_process stopped'
+    ;;
+  restart)
+    restart
+    echo 'manage_my_process restarted'
+    ;;i
+esac
+  
 
