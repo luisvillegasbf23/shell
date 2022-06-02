@@ -1,4 +1,5 @@
-nage my process
+#!/usr/bin/env bash
+#Manage my process
 
 RUT=/var/run/my_process.pid
 
@@ -8,8 +9,8 @@ start() {
 }
 
 stop() {
-  sudo kill -9 "$( cat $FILE )" 
-  sudo rm "$FILE"
+  sudo kill -9 "$( cat $RUT )" 
+  sudo rm "$RUT"
 }
 
 case $1 in 
