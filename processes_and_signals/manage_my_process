@@ -4,4 +4,4 @@ while true
   do
     echo 'I am alive!'
     sleep 2
-  done
+  done >> /tmp/my_process
